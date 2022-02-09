@@ -6,6 +6,7 @@
   width: 430px;
   font-family: 'Poppins', sans-serif;
   color: #0093ED;
+  overflow: scroll;
 }
 
 /*Text*/
@@ -16,6 +17,10 @@ h1, h2, h3, p  {
 
 p {
   margin-bottom: 0;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .small-light {
@@ -41,6 +46,10 @@ p {
 
 .body {
   margin: 5px 20px;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Reusable Elements */
@@ -94,7 +103,7 @@ hr {
 }
 
 /* Date */
-.date-wrapper {
+.date-item {
   display: flex;
   background-color: white;
   padding: 9px 17px;
@@ -193,4 +202,27 @@ hr {
 
 ::placeholder {
   color: #7DD8FF;
+}
+
+/* Schedule Selection Page */
+
+.schedule-selection--container {
+  padding: 8px 15px 10px 20px;
+}
+
+.schedule-selection--prompt {
+  margin-bottom: 8px;
+}
+
+.schedule-selection--explanation {
+  margin-bottom: 12px;
+}
+
+.input-time {
+  width: 10%;
+  padding: 7px 12px;
+  border-radius: 12px;
+  border: 2px solid #7bc9f9;
+  color: #0093ED;
+  margin-bottom: 5px;
 }
