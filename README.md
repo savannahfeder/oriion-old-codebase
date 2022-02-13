@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+## Oriion ✨
+Oriion is an accountability chrome extension developed to reduce the extremely low engagement and retention rates of self-paced online courses.
+![image](https://user-images.githubusercontent.com/71240740/153739524-a02b013d-f151-48d8-8cbd-ba3e722514c2.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### The Stats
+- Massively open online courses (MOOCs) are a rapidly growing $8 billion market 
+- MOOCs are, in theory, a great solution to combatting the increasing inaccessibility of education (already sky-high tuitions increasing at twice the rate of inflation)
+- But in practice, [only 4% of students enrolled actually complete them](https://www.researchgate.net/publication/330316898_The_MOOC_pivot), and the average student [does not make it more than 1/3 of the way through](https://might-could.com/essays/online-classes-dont-work/#:~:text=Udemy%20reports%20that%20the%20average,never%20even%20start%20the%20course!) before giving up.
 
-## Available Scripts
+### The Causes
+We sent out a survey to look at the reasons behind these low completion rates, and the following were the three most commonly reported culprits:
+- **70%** of respondents responded "**the course did not take priority over other things on my to-do list"** as their either one or two top reasons for not progressing further in an online course
+- **50%** of respondents responded "**I lost motivation to progress further through the course"** as their top one or two reason for not progressing further in an online course
+- **31.3%** checked off **"I felt isolated taking the course on my own"** as a reason why they have not completed or progressed very far in an online course
 
-In the project directory, you can run:
+### The solution?
+To build a platform that incentivizes students to prioritize their online course, while maintaining their motivation, and keeping them accountable and not isolated.
 
-### `npm start`
+After reading (okay, skimming) a handful of articles, books and studies on motivation, education and accountability, I came up with a few easy-to-implement features, and mapped them on a value-complexity graph to determine the features of the MVP.
+![image](https://user-images.githubusercontent.com/71240740/153739576-401c82a2-b18b-4017-b380-8e29670ac97a.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The four features in the top left high value, low complexity quadrant came together nicely to fit a theme of **an online course accountability tracker.**
