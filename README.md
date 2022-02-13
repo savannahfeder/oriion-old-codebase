@@ -21,4 +21,4 @@ After reading (okay, skimming) a handful of articles, books and studies on motiv
 
 ![image](https://user-images.githubusercontent.com/71240740/153739576-401c82a2-b18b-4017-b380-8e29670ac97a.png)
 
-The four features in the top left high value, low complexity quadrant came together nicely to fit a theme of an **online course accountability tracker**. And that's exactly what I designed the MVP to be – more updates to come once it's been deployed to the Chrome Web Store 🚀
+The four features in the high value, low complexity quadrant came together nicely to fit a theme of an **online course accountability tracker**. And that's exactly what I designed the MVP to be – more updates to come once it's been deployed to the Chrome Web Store 🚀
