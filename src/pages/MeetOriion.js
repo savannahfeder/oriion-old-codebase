@@ -1,5 +1,6 @@
 import React from "react"
 import TopBar from "../components/TopBar.js"
+import { Link } from "react-router-dom"
 
 
 export default function MeetOriion() {
@@ -10,7 +11,7 @@ export default function MeetOriion() {
                 <div>
                     <h1 className="meet-oriion--header"><span className="lightest-text">meet</span> oriion</h1>
                     <div className="meet-oriion--tagline-div">Your online course accountability buddy</div>
-                    <a className="button button-link meet-oriion--button" href="src/pages/CoursePicker.js">Let's get started</a>
+                    <Link className="button button-link meet-oriion--button" to="/select-course">Let's get started</Link>
                 </div>
             </div>
         </div>

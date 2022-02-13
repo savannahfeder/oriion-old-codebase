@@ -76,7 +76,7 @@ export default function Schedule() {
                     Saturday <input class="input-time" type="text" name="saturday-field-one" placeholder="8:30" /> to <input class="input-time" type="text" name="saturday-field-two" placeholder="10:30" /> 
                 </li>
             </ul>
-            <button onClick={submitSchedule} className="button">Submit</button>
+            <button onClick={submitSchedule} className="button hidden">Submit</button>
         </div>
     )
 }

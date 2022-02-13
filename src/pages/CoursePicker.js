@@ -2,12 +2,13 @@ import React from "react"
 import TopBarPageSpecific from "../components/TopBarPageSpecific.js"
 
 
-export default function CoursePicker() {
+export default function CoursePicker(props) {
+    
     return (
         <div className="course-picker">
             <TopBarPageSpecific page="Course" />
             <div className="course-picker--container">
-                <p className="bold course-picker--prompt">Which course do you want to be kept accountable on?</p>
+                <p className="bold course-picker--prompt">{props.name}</p>
 
                 <form form_id="course-picker--form">
                     <label for="course-picker--form" className="small-light label">Course Name</label>
