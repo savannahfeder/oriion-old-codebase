@@ -1,5 +1,5 @@
 # Oriion ✨
-Oriion is an accountability chrome extension developed to reduce the extremely low engagement and retention rates of self-paced online courses.
+Oriion is an accountability chrome extension developed to reduce the low engagement and retention rates of self-paced online courses.
 
 <img src="https://user-images.githubusercontent.com/71240740/153739991-75b70b26-d36c-416a-8fd2-518703b703fc.png" width="450"/>
 
