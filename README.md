@@ -1,7 +1,7 @@
 # Oriion ✨
 Oriion is an accountability chrome extension developed to reduce the low engagement and retention rates of self-paced online courses.
 
-<img src="https://user-images.githubusercontent.com/71240740/153739991-75b70b26-d36c-416a-8fd2-518703b703fc.png" width="450"/>
+<img src="https://user-images.githubusercontent.com/71240740/153739991-75b70b26-d36c-416a-8fd2-518703b703fc.png" width="250"/>
 
 ## The Stats 📊
 - Massively open online courses (MOOCs) are a rapidly growing [$8 billion market](https://www.researchandmarkets.com/reports/5240206/massive-open-online-course-mooc-market-by?utm_source=BW&utm_medium=PressRelease&utm_code=n7p5s4&utm_campaign=1513081+-+%2467.18+Billion+Massive+Open+Online+Course+(MOOC)+Market+-+Global+Forecast+to+2026&utm_exec=chdo54prd)
