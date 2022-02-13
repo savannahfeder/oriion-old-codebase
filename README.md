@@ -9,7 +9,7 @@ Oriion is an accountability chrome extension developed to reduce the low engagem
 - But in practice, [only 4% of students enrolled actually complete them](https://www.researchgate.net/publication/330316898_The_MOOC_pivot), and the average student does not make it more than [1/3 of the way through](https://might-could.com/essays/online-classes-dont-work/#:~:text=Udemy%20reports%20that%20the%20average,never%20even%20start%20the%20course!) before giving up.
 
 ## The Causes 👨‍💻
-We sent out a survey to look at the reasons behind these low completion rates, and the following are the three most commonly reported culprits:
+I sent out a survey to look at the reasons behind these low completion rates, and the following are the three most commonly reported culprits:
 - **70%** of respondents responded "**the course did not take priority over other things on my to-do list"** as their either one or two top reasons for not progressing further in an online course
 - **50%** of respondents responded "**I lost motivation to progress further through the course"** as their top one or two reason for not progressing further in an online course
 - **31.3%** checked off **"I felt isolated taking the course on my own"** as a reason why they have not completed or progressed very far in an online course
