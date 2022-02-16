@@ -1,20 +1,31 @@
-import './index.css';
-import React from "react"
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
-import Home from "./pages/Home.js"
-import MeetOriion from "./pages/MeetOriion.js"
-import CoursePicker from './pages/CoursePicker';
-import CourseGoal from './pages/CourseGoal';
-import ScheduleSelection from './pages/ScheduleSelection';
-
+import "./index.css";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home.js";
+import MeetOriion from "./pages/MeetOriion.js";
+import CoursePicker from "./pages/CoursePicker";
+import CourseGoal from "./pages/CourseGoal";
+import ScheduleSelection from "./pages/ScheduleSelection";
 
 function App() {
+  const [data, setData] = useState({
+    courseName: null,
+    courseURL: null,
+    courseGoal: null,
+    courseSchedule: null,
+  });
+
+  //Local storage: currently not used
+  // useEffect(() => {
+  //   localStorage.setItem("data", JSON.stringify(data));
+  // }, [data]);
+
   return (
     <Router>
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <Home goal="Become a frontend developer by May 2022" streak = {7}/>
+            <Home goal="Become a frontend developer by May 2022" streak={7} />
           </Route>
           <Route path="/get-started">
             <MeetOriion />
@@ -23,10 +34,10 @@ function App() {
             <CoursePicker />
           </Route>
           <Route path="/set-goal">
-            <CourseGoal />
+            <CourseGoal data={data} setData={setData} />
           </Route>
           <Route path="/set-schedule">
-            <ScheduleSelection /> 
+            <ScheduleSelection />
           </Route>
         </Switch>
       </div>

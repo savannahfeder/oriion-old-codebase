@@ -4,14 +4,17 @@
   border-radius: 5px;
   height: 305px;
   width: 430px;
-  font-family: 'Poppins', sans-serif;
-  color: #0093ED;
+  font-family: "Poppins", sans-serif;
+  color: #0093ed;
   /* overflow: scroll; */
 }
 
 /*Text*/
 
-h1, h2, h3, p  {
+h1,
+h2,
+h3,
+p {
   margin-top: 0;
 }
 
@@ -55,7 +58,7 @@ ul {
 /* Reusable Elements */
 
 .button {
-  background-color: #0093ED;
+  background-color: #0093ed;
   color: white;
   padding: 10px 25px;
   border-radius: 12px;
@@ -94,9 +97,8 @@ hr {
 
 /*Home page*/
 
-
 .background-div {
-  background-color: #D6F5FF;
+  background-color: #d6f5ff;
   border-radius: 18px;
   padding: 10px 15px;
   margin: 10px 0;
@@ -121,7 +123,7 @@ hr {
 }
 
 .checked {
-  background-color: #0093ED;
+  background-color: #0093ed;
   color: white;
 }
 
@@ -164,7 +166,7 @@ hr {
   padding: 7px 12px;
   border-radius: 12px;
   border: 2px solid #7bc9f9;
-  color: #0093ED;
+  color: #0093ed;
   margin-bottom: 5px;
 }
 
@@ -201,7 +203,7 @@ hr {
 }
 
 ::placeholder {
-  color: #7DD8FF;
+  color: #7dd8ff;
 }
 
 /* Schedule Selection Page */
@@ -223,6 +225,6 @@ hr {
   padding: 7px 12px;
   border-radius: 12px;
   border: 2px solid #7bc9f9;
-  color: #0093ED;
+  color: #0093ed;
   margin-bottom: 5px;
 }

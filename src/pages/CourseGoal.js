@@ -4,18 +4,10 @@ import TopBarPageSpecific from "../components/TopBarPageSpecific.js";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-export default function CoursePicker() {
-  const [data, setData] = useState({
-    courseName: null,
-    courseURL: null,
-    courseGoal: null,
-    courseSchedule: null,
-  });
+export default function CoursePicker(props) {
+  console.log(props);
 
-  useEffect(() => {
-    localStorage.setItem("data", JSON.stringify(data));
-  }, [data]);
-
+  //extract this to parent
   let history = useHistory();
   const handleGoalSubmit = (event) => {
     event.preventDefault();
@@ -25,7 +17,7 @@ export default function CoursePicker() {
   };
 
   const handleInput = (e) => {
-    setData((prevData) => {
+    props.setData((prevData) => {
       return {
         ...prevData,
         courseGoal: e.target.value,
