@@ -5,14 +5,10 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 export default function CoursePicker(props) {
-  console.log(props);
-
-  //extract this to parent
   let history = useHistory();
   const handleGoalSubmit = (event) => {
     event.preventDefault();
     console.log("Submitted!");
-    // eslint-disable-next-line no-restricted-globals
     history.push("/set-schedule");
   };
 
@@ -45,7 +41,6 @@ export default function CoursePicker(props) {
             onChange={handleInput}
           />
           <br />
-          {/* <Link to="/"></Link> */}
           <input
             className="button form-button course-goal--button"
             type="submit"

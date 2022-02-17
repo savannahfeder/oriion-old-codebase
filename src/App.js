@@ -13,9 +13,20 @@ function App() {
     courseURL: null,
     courseGoal: null,
     courseSchedule: null,
+    streak: 0,
+    dailySchedule: {
+      //make these all objects with a start and end time
+      sunday: [],
+      monday: [],
+      tuesday: [],
+      wednesday: [],
+      thursday: [],
+      friday: [],
+      saturday: [],
+    },
   });
 
-  //Local storage: currently not used
+  //TODO: local storage || set up Firebase
   // useEffect(() => {
   //   localStorage.setItem("data", JSON.stringify(data));
   // }, [data]);
@@ -25,19 +36,19 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <Home goal="Become a frontend developer by May 2022" streak={7} />
+            <Home data={data} setData={setData} />
           </Route>
           <Route path="/get-started">
             <MeetOriion />
           </Route>
           <Route path="/select-course">
-            <CoursePicker />
+            <CoursePicker data={data} setData={setData} />
           </Route>
           <Route path="/set-goal">
             <CourseGoal data={data} setData={setData} />
           </Route>
           <Route path="/set-schedule">
-            <ScheduleSelection />
+            <ScheduleSelection data={data} setData={setData} />
           </Route>
         </Switch>
       </div>
