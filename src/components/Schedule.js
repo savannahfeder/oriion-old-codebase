@@ -211,32 +211,3 @@ export default function Schedule(props) {
     </div>
   );
 }
-
-//Might be a good idea to completely rework this component -> feels repeititive
-// and difficult to maintain or work with
-
-// function openMonday() {
-//   toggleCorrectWeekday("monday-input");
-// }
-
-// function openTuesday() {
-//   toggleCorrectWeekday("tuesday-input");
-// }
-
-// function openWednesday() {
-//   toggleCorrectWeekday("wednesday-input");
-// }
-
-// function openThursday() {
-//   toggleCorrectWeekday("thursday-input");
-// }
-
-// function openFriday() {
-//   toggleCorrectWeekday("friday-input");
-// }
-
-// function openSaturday() {
-//   toggleCorrectWeekday("saturday-input");
-// }
-
-// {
