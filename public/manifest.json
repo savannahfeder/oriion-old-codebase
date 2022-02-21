@@ -1,10 +1,19 @@
 {
-  "manifest_version": 2,
-  "version": "1.0.2",
   "name": "ClassTrack",
+  "version": "0.0.1",
+  "manifest_version": 3,
   "description": "An accountability tracker for your online courses",
-  "action": {
-    "default_popup": "index.html",
-    "default_icon": "favicon.ico"
-  }
+  "icons": {
+    "favicon": "favicon.ico"
+  },
+  "permissions": [],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": "favicon.ico",
+    "default_popup": "popup.html"
+  },
+  "options_page": "index.html"
 }

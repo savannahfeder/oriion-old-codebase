@@ -1,15 +1,17 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
+import WeekdayBlock from "./WeekdayBlock";
+import WeekdayInput from "./WeekdayInput";
 
 //TODO: refactor schedule blocks and input fields into components to make less repetitive
 export default function Schedule(props) {
-  const sundayRef = useRef();
-  const mondayRef = useRef();
-  const tuesdayRef = useRef();
-  const wednesdayRef = useRef();
-  const thursdayRef = useRef();
-  const fridayRef = useRef();
-  const saturdayRef = useRef();
+  const [sundaySelected, setSundaySelected] = useState(false);
+  const [mondaySelected, setMondaySelected] = useState(false);
+  const [tuesdaySelected, setTuesdaySelected] = useState(false);
+  const [wednesdaySelected, setWednesdaySelected] = useState(false);
+  const [thursdaySelected, setThursdaySelected] = useState(false);
+  const [fridaySelected, setFridaySelected] = useState(false);
+  const [saturdaySelected, setSaturdaySelected] = useState(false);
 
   let history = useHistory();
   const handleScheduleSubmit = (event) => {
@@ -19,7 +21,28 @@ export default function Schedule(props) {
     history.push("/");
   };
 
-  const toggleSelect = (e) => {
+  const handleToggle = (e, weekday) => {
+    toggleStyling(e);
+    //set state of [weekdaySelec†ed] depending on weekday
+    //TODO: change styling [google conditional styling in React]
+    if (weekday === "sunday") {
+      setSundaySelected((prevState) => !prevState);
+    } else if (weekday === "monday") {
+      setMondaySelected((prevState) => !prevState);
+    } else if (weekday === "tuesday") {
+      setTuesdaySelected((prevState) => !prevState);
+    } else if (weekday === "wednesday") {
+      setWednesdaySelected((prevState) => !prevState);
+    } else if (weekday === "thursday") {
+      setThursdaySelected((prevState) => !prevState);
+    } else if (weekday === "friday") {
+      setFridaySelected((prevState) => !prevState);
+    } else if (weekday === "saturday") {
+      setSaturdaySelected((prevState) => !prevState);
+    }
+  };
+
+  const toggleStyling = (e) => {
     const element = e.target;
     if (element.classList.contains("selected")) {
       element.classList.remove("selected");
@@ -28,186 +51,41 @@ export default function Schedule(props) {
     }
   };
 
-  const handleToggle = (e) => {
-    const element = e.target;
-    //if not already selected, adds selected styling and makes correct input appear
-    if (!element.classList.contains("selected")) {
-      element.classList.add("selected");
-      if (element.classList.contains("sunday")) {
-        sundayRef.current.classList.remove("hidden");
-      } else if (element.classList.contains("monday")) {
-        mondayRef.current.classList.remove("hidden");
-      } else if (element.classList.contains("tuesday")) {
-        tuesdayRef.current.classList.remove("hidden");
-      } else if (element.classList.contains("wednesday")) {
-        wednesdayRef.current.classList.remove("hidden");
-      } else if (element.classList.contains("thursday")) {
-        thursdayRef.current.classList.remove("hidden");
-      } else if (element.classList.contains("friday")) {
-        fridayRef.current.classList.remove("hidden");
-      } else if (element.classList.contains("saturday")) {
-        saturdayRef.current.classList.remove("hidden");
-      }
-      //if already selected, removes selected styling and removes corresponding input fields
-    } else {
-      element.classList.remove("selected");
-      if (element.classList.contains("sunday")) {
-        sundayRef.current.classList.add("hidden");
-      } else if (element.classList.contains("monday")) {
-        mondayRef.current.classList.add("hidden");
-      } else if (element.classList.contains("tuesday")) {
-        tuesdayRef.current.classList.add("hidden");
-      } else if (element.classList.contains("wednesday")) {
-        wednesdayRef.current.classList.add("hidden");
-      } else if (element.classList.contains("thursday")) {
-        thursdayRef.current.classList.add("hidden");
-      } else if (element.classList.contains("friday")) {
-        fridayRef.current.classList.add("hidden");
-      } else if (element.classList.contains("saturday")) {
-        saturdayRef.current.classList.add("hidden");
-      }
-    }
-  };
-
   return (
     <div className="schedule-component">
       <ul className="schedule background-div">
-        <li onClick={handleToggle} className="date-item sunday">
-          S
-        </li>
-        <li onClick={handleToggle} className="date-item monday">
-          M
-        </li>
-        <li onClick={handleToggle} className="date-item tuesday">
-          T
-        </li>
-        <li onClick={handleToggle} className="date-item wednesday">
-          W
-        </li>
-        <li onClick={handleToggle} className="date-item thursday">
-          T
-        </li>
-        <li onClick={handleToggle} className="date-item friday">
-          F
-        </li>
-        <li onClick={handleToggle} className="date-item saturday">
-          S
-        </li>
+        <WeekdayBlock weekday="sunday" text="S" handleToggle={handleToggle} />
+        <WeekdayBlock weekday="monday" text="M" handleToggle={handleToggle} />
+        <WeekdayBlock weekday="tuesday" text="T" handleToggle={handleToggle} />
+        <WeekdayBlock
+          weekday="wednesday"
+          text="W"
+          handleToggle={handleToggle}
+        />
+        <WeekdayBlock weekday="thursday" text="T" handleToggle={handleToggle} />
+        <WeekdayBlock weekday="friday" text="F" handleToggle={handleToggle} />
+        <WeekdayBlock weekday="saturday" text="S" handleToggle={handleToggle} />
       </ul>
       <ul class="daily-schedule-inputs">
-        <li ref={sundayRef} class="day-input hidden">
-          Sunday{" "}
-          <input
-            class="input-time"
-            type="text"
-            name="sunday-field-one"
-            placeholder="hh:mm" //const fieldOnePlaceholder = props.sunday ? props.sunday.startTime : "hh:mm"
-          />{" "}
-          to{" "}
-          <input
-            class="input-time"
-            type="text"
-            name="sunday-field-two"
-            placeholder="hh:mm"
-          />
-        </li>
-        <li ref={mondayRef} class="day-input hidden">
-          Monday{" "}
-          <input
-            class="input-time"
-            type="text"
-            name="monday-field-one"
-            placeholder="hh:mm"
-          />{" "}
-          to{" "}
-          <input
-            class="input-time"
-            type="text"
-            name="monday-field-two"
-            placeholder="hh:mm"
-          />
-        </li>
-        <li ref={tuesdayRef} class="day-input hidden">
-          Tuesday{" "}
-          <input
-            class="input-time"
-            type="text"
-            name="tuesday-field-one"
-            placeholder="hh:mm"
-          />{" "}
-          to{" "}
-          <input
-            class="input-time"
-            type="text"
-            name="tuesday-field-two"
-            placeholder="hh:mm"
-          />
-        </li>
-        <li ref={wednesdayRef} class="day-input hidden">
-          Wednesday{" "}
-          <input
-            class="input-time"
-            type="text"
-            name="wednesday-field-one"
-            placeholder="hh:mm"
-          />{" "}
-          to{" "}
-          <input
-            class="input-time"
-            type="text"
-            name="wednesday-field-two"
-            placeholder="hh:mm"
-          />
-        </li>
-        <li ref={thursdayRef} class="day-input hidden">
-          Thursday{" "}
-          <input
-            class="input-time"
-            type="text"
-            name="thursday-field-one"
-            placeholder="hh:mm"
-          />{" "}
-          to{" "}
-          <input
-            class="input-time"
-            type="text"
-            name="thursday-field-two"
-            placeholder="hh:mm"
-          />
-        </li>
-        <li ref={fridayRef} class="day-input hidden">
-          Friday{" "}
-          <input
-            class="input-time"
-            type="text"
-            name="friday-field-one"
-            placeholder="hh:mm"
-          />{" "}
-          to{" "}
-          <input
-            class="input-time"
-            type="text"
-            name="friday-field-two"
-            placeholder="hh:mm"
-          />
-        </li>
-        <li ref={saturdayRef} class="day-input hidden">
-          Saturday{" "}
-          <input
-            class="input-time"
-            type="text"
-            name="saturday-field-one"
-            placeholder="hh:mm"
-          />{" "}
-          to{" "}
-          <input
-            class="input-time"
-            type="text"
-            name="saturday-field-two"
-            placeholder="hh:mm"
-          />
-        </li>
+        {sundaySelected && <WeekdayInput weekday="Sunday" />}
+        {mondaySelected && <WeekdayInput weekday="Monday" />}
+        {tuesdaySelected && <WeekdayInput weekday="Tuesday" />}
+        {wednesdaySelected && <WeekdayInput weekday="Wednesday" />}
+        {thursdaySelected && <WeekdayInput weekday="Thursday" />}
+        {fridaySelected && <WeekdayInput weekday="Friday" />}
+        {saturdaySelected && <WeekdayInput weekday="Saturday" />}
       </ul>
+      {(sundaySelected ||
+        mondaySelected ||
+        tuesdaySelected ||
+        wednesdaySelected ||
+        thursdaySelected ||
+        fridaySelected ||
+        saturdaySelected) && (
+        <button onClick={handleScheduleSubmit} className="schedule--button">
+          Submit
+        </button>
+      )}
     </div>
   );
 }
