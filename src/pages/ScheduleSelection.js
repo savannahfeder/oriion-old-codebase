@@ -13,7 +13,11 @@ export default function ScheduleSelection(props) {
           <strong>importance of taking this step.</strong> Also mention to add
           to calendar, and will determine when popups appear if enabled.
         </p>
-        <Schedule data={props.data} setData={props.setData} />
+        <Schedule
+          data={props.data}
+          setData={props.setData}
+          currentPage="schedule"
+        />
       </div>
     </div>
   );

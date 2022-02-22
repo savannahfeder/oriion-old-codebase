@@ -14,16 +14,13 @@ function App() {
     courseGoal: null,
     courseSchedule: null,
     streak: 0,
-    dailySchedule: {
-      //make these all objects with a start and end time
-      sunday: [],
-      monday: [],
-      tuesday: [],
-      wednesday: [],
-      thursday: [],
-      friday: [],
-      saturday: [],
-    },
+    sunday: [],
+    monday: [],
+    tuesday: [],
+    wednesday: [],
+    thursday: [],
+    friday: [],
+    saturday: [],
   });
 
   //TODO: local storage || set up Firebase

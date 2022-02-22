@@ -18,7 +18,7 @@ export default function Home(props) {
         <Schedule
           data={props.data}
           setData={props.setData}
-          visibility="hidden"
+          currentPage="home"
         />
       </div>
     </div>
