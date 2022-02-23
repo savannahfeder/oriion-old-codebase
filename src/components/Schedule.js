@@ -23,7 +23,6 @@ export default function Schedule(props) {
 
   const handleToggle = (e, weekday) => {
     toggleStyling(e);
-    //set state of [weekdaySelec†ed] depending on weekday
     //TODO: change styling [google conditional styling in React]
     if (weekday === "sunday") {
       setSundaySelected((prevState) => !prevState);
