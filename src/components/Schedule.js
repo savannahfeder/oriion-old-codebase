@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import WeekdayBlock from "./WeekdayBlock";
-import WeekdayInput from "./WeekdayInput";
+import ScheduleWeekdayBlock from "./ScheduleWeekdayBlock";
+import ScheduleWeekdayInput from "./ScheduleWeekdayInput";
 
 //TODO: refactor schedule blocks and input fields into components to make less repetitive
 export default function Schedule(props) {
@@ -13,6 +13,7 @@ export default function Schedule(props) {
   const [fridaySelected, setFridaySelected] = useState(false);
   const [saturdaySelected, setSaturdaySelected] = useState(false);
 
+  console.log(tuesdaySelected);
   let history = useHistory();
   const handleScheduleSubmit = (event) => {
     event.preventDefault();
@@ -22,8 +23,6 @@ export default function Schedule(props) {
   };
 
   const handleToggle = (e, weekday) => {
-    toggleStyling(e);
-    //TODO: change styling [google conditional styling in React]
     if (weekday === "sunday") {
       setSundaySelected((prevState) => !prevState);
     } else if (weekday === "monday") {
@@ -41,81 +40,118 @@ export default function Schedule(props) {
     }
   };
 
-  const toggleStyling = (e) => {
-    const element = e.target;
-    if (element.classList.contains("selected")) {
-      element.classList.remove("selected");
-    } else {
-      element.classList.add("selected");
-    }
-  };
-
   return (
     <div className="schedule-component">
       <ul className="schedule background-div">
-        <WeekdayBlock weekday="sunday" text="S" handleToggle={handleToggle} />
-        <WeekdayBlock weekday="monday" text="M" handleToggle={handleToggle} />
-        <WeekdayBlock weekday="tuesday" text="T" handleToggle={handleToggle} />
-        <WeekdayBlock
+        <ScheduleWeekdayBlock
+          weekday="sunday"
+          text="S"
+          handleToggle={handleToggle}
+          data={props.data}
+          setData={props.setData}
+          isWeekdaySelected={sundaySelected}
+        />
+        <ScheduleWeekdayBlock
+          weekday="monday"
+          text="M"
+          handleToggle={handleToggle}
+          data={props.data}
+          setData={props.setData}
+          isWeekdaySelected={mondaySelected}
+        />
+        <ScheduleWeekdayBlock
+          weekday="tuesday"
+          text="T"
+          handleToggle={handleToggle}
+          data={props.data}
+          setData={props.setData}
+          isWeekdaySelected={tuesdaySelected}
+        />
+        <ScheduleWeekdayBlock
           weekday="wednesday"
           text="W"
           handleToggle={handleToggle}
+          data={props.data}
+          setData={props.setData}
+          isWeekdaySelected={wednesdaySelected}
         />
-        <WeekdayBlock weekday="thursday" text="T" handleToggle={handleToggle} />
-        <WeekdayBlock weekday="friday" text="F" handleToggle={handleToggle} />
-        <WeekdayBlock weekday="saturday" text="S" handleToggle={handleToggle} />
+        <ScheduleWeekdayBlock
+          weekday="thursday"
+          text="T"
+          handleToggle={handleToggle}
+          data={props.data}
+          setData={props.setData}
+          isWeekdaySelected={thursdaySelected}
+        />
+        <ScheduleWeekdayBlock
+          weekday="friday"
+          text="F"
+          handleToggle={handleToggle}
+          data={props.data}
+          setData={props.setData}
+          isWeekdaySelected={fridaySelected}
+        />
+        <ScheduleWeekdayBlock
+          weekday="saturday"
+          text="S"
+          handleToggle={handleToggle}
+          data={props.data}
+          setData={props.setData}
+          isWeekdaySelected={saturdaySelected}
+        />
       </ul>
       <ul class="daily-schedule-inputs">
         {sundaySelected && (
-          <WeekdayInput
+          <ScheduleWeekdayInput
             weekday="Sunday"
             data={props.data}
             setData={props.setData}
           />
         )}
         {mondaySelected && (
-          <WeekdayInput
+          <ScheduleWeekdayInput
             weekday="Monday"
             data={props.data}
             setData={props.setData}
           />
         )}
         {tuesdaySelected && (
-          <WeekdayInput
+          <ScheduleWeekdayInput
             weekday="Tuesday"
             data={props.data}
             setData={props.setData}
           />
         )}
         {wednesdaySelected && (
-          <WeekdayInput
+          <ScheduleWeekdayInput
             weekday="Wednesday"
             data={props.data}
             setData={props.setData}
           />
         )}
         {thursdaySelected && (
-          <WeekdayInput
+          <ScheduleWeekdayInput
             weekday="Thursday"
             data={props.data}
             setData={props.setData}
           />
         )}
         {fridaySelected && (
-          <WeekdayInput
+          <ScheduleWeekdayInput
             weekday="Friday"
             data={props.data}
             setData={props.setData}
           />
         )}
         {saturdaySelected && (
-          <WeekdayInput
+          <ScheduleWeekdayInput
             weekday="Saturday"
             data={props.data}
             setData={props.setData}
           />
         )}
       </ul>
+      {/* Only shows submit button on Schedule onboarding page and if at least one block selected  */}
       {props.currentPage === "schedule" &&
         (sundaySelected ||
           mondaySelected ||

@@ -246,3 +246,9 @@ hr {
   margin-bottom: 5px;
   text-align: center;
 }
+
+.editing {
+  outline: solid rgb(0, 1, 2) 1px;
+  background-color: #0093ed;
+  color: white;
+}
