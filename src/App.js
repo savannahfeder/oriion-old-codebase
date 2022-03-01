@@ -8,25 +8,30 @@ import CourseGoal from "./pages/CourseGoal";
 import ScheduleSelection from "./pages/ScheduleSelection";
 
 function App() {
-  const [data, setData] = useState({
-    courseName: null,
-    courseURL: null,
-    courseGoal: null,
-    courseSchedule: null,
-    streak: 0,
-    sunday: [],
-    monday: [],
-    tuesday: [],
-    wednesday: [],
-    thursday: [],
-    friday: [],
-    saturday: [],
-  });
+  //Sets user data as state, either from local storage if exists or as new object
+  const [data, setData] = useState(
+    JSON.parse(localStorage.getItem("data")) || {
+      courseName: null,
+      courseURL: null,
+      courseGoal: null,
+      courseSchedule: null,
+      streak: 0,
+      sunday: [],
+      monday: [],
+      tuesday: [],
+      wednesday: [],
+      thursday: [],
+      friday: [],
+      saturday: [],
+    }
+  );
 
-  //TODO: local storage || set up Firebase
-  // useEffect(() => {
-  //   localStorage.setItem("data", JSON.stringify(data));
-  // }, [data]);
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(data));
+  }, [data]);
+
+  console.log(JSON.parse(localStorage.getItem("data")));
+  console.log(data);
 
   return (
     <Router>
